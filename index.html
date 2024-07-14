@@ -16,6 +16,7 @@
         .container {
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
             width: 90%;
             margin: auto;
             background-color: #fff;
@@ -108,6 +109,24 @@
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            .left-column,
+            .right-column {
+                width: 100%;
+                text-align: center;
+            }
+
+            .qr-code img {
+                max-width: 100%;
+                height: auto;
+            }
         }
     </style>
 </head>
@@ -225,7 +244,7 @@
         }
 
         // Close popup when clicking outside of popup-content
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const popups = document.querySelectorAll('.popup');
             popups.forEach(popup => {
                 if (event.target == popup) {
@@ -235,7 +254,7 @@
         }
 
         // Close popup when pressing "ESC"
-        document.onkeydown = function(event) {
+        document.onkeydown = function (event) {
             if (event.key === "Escape") {
                 const popups = document.querySelectorAll('.popup');
                 popups.forEach(popup => {
