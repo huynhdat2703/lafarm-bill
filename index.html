@@ -15,8 +15,8 @@
 
         .container {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            flex-wrap: wrap;
             width: 90%;
             margin: auto;
             background-color: #fff;
@@ -27,11 +27,12 @@
         }
 
         .left-column {
-            width: 70%;
+            width: 100%;
+            margin-bottom: 20px;
         }
 
         .right-column {
-            width: 25%;
+            width: 100%;
             text-align: center;
         }
 
@@ -111,21 +112,36 @@
             cursor: pointer;
         }
 
-        @media screen and (max-width: 768px) {
+        @media screen and (min-width: 769px) {
             .container {
-                flex-direction: column;
-                padding: 10px;
+                flex-direction: row;
             }
 
-            .left-column,
+            .left-column {
+                width: 70%;
+                margin-bottom: 0;
+            }
+
             .right-column {
-                width: 100%;
-                text-align: center;
+                width: 25%;
             }
+        }
 
+        @media screen and (max-width: 768px) {
             .qr-code img {
                 max-width: 100%;
                 height: auto;
+            }
+        }
+
+        @media screen and (max-width: 400px) {
+            body {
+                font-size: 14px;
+            }
+
+            th,
+            td {
+                padding: 8px;
             }
         }
     </style>
@@ -203,7 +219,7 @@
         </div>
         <div class="right-column">
             <div class="qr-code">
-                <h2>Tài khoản nhận tiền</h2>
+                <h2>TÀI KHOẢN NHẬN TIỀN</h2>
                 <img src="images/qr-code.jpg" alt="QR Code">
             </div>
         </div>
